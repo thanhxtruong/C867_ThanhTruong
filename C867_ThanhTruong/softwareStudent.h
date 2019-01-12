@@ -2,13 +2,14 @@
 #include "student.h"
 #include"degree.h"
 
-class softwareStudent : public student
+template <typename degreeType>
+class softwareStudent : public student<degreeType>
 {
 private:
 	Degree degree = Degree::SOFTWARE;
 public:
 	softwareStudent();
 	~softwareStudent();
-	std::string getDegreeProgram() const;
+	degreeType getDegreeProgram() const;
 };
 

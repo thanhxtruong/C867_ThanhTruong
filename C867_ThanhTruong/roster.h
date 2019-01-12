@@ -4,6 +4,8 @@
 #include "networkStudent.h"
 #include"softwareStudent.h"
 
+
+template <typename degreeType>
 class roster
 {
 private:

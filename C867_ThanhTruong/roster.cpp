@@ -5,7 +5,8 @@ using std::string;
 using std::cout;
 using std::endl;
 
-roster::roster()
+template <typename degreeType>
+roster<degreeType>::roster()
 {
 	classRosterArray[0] = &studentA1;
 	classRosterArray[1] = &studentA2;
@@ -14,11 +15,15 @@ roster::roster()
 	classRosterArray[4] = &studentA5;
 }
 
-roster::~roster()
+
+template <typename degreeType>
+roster<degreeType>::~roster()
 {
 }
 
-student* roster::getStudentPointer(Degree program) {
+
+template <typename degreeType>
+student<degreeType>* roster<degreeType>::getStudentPointer(Degree program) {
 	switch (program) {
 		case SECURITY:
 			if(studentA1.getStudentID() == "") {
@@ -44,7 +49,8 @@ student* roster::getStudentPointer(Degree program) {
 
 }
 
-void roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree program) {
+template <typename degreeType>
+void roster<degreeType>::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree program) {
 	getStudentPointer(program)->setStudentID(studentID);
 	getStudentPointer(program)->setFirstName(firstName);
 	getStudentPointer(program)->setLastName(lastName);
@@ -53,7 +59,7 @@ void roster::add(string studentID, string firstName, string lastName, string ema
 	getStudentPointer(program)->setDay(daysInCourse1, 0);
 	getStudentPointer(program)->setDay(daysInCourse2, 1);
 	getStudentPointer(program)->setDay(daysInCourse3, 2);
-	getStudentPointer(program)->setDegree(program);
+	//getStudentPointer(program)->setDegree(program);
 }
 
 int main() {
@@ -83,7 +89,7 @@ int main() {
 	cout << "Student ID: #001062385" << endl;
 	cout << "Student Name: Thanh Truong" << endl;
 
-	roster classRoster;
+	roster<string> classRoster;
 	for (int i = 0; i < 5; ++i) {
 		data = studentData[i];
 		for (int j = 0; j < 9; ++j) {

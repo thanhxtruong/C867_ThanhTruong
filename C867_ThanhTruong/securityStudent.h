@@ -3,13 +3,14 @@
 #include"degree.h"
 #include <string>
 
-class securityStudent : public student
+template <typename degreeType>
+class securityStudent : public student<degreeType>
 {
 private:
 	Degree degree = Degree::SECURITY;
 public:
 	securityStudent();
 	~securityStudent();
-	std::string getDegreeProgram() const;
+	degreeType getDegreeProgram() const;
 };
 

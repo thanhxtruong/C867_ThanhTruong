@@ -1,17 +1,18 @@
 #include "pch.h"
 #include "softwareStudent.h"
 
-
-softwareStudent::softwareStudent() : student()
+template <typename degreeType>
+softwareStudent<degreeType>::softwareStudent() : student()
 {
 	setDegree(degree);
 }
 
-
-softwareStudent::~softwareStudent()
+template <typename degreeType>
+softwareStudent<degreeType>::~softwareStudent()
 {
 }
 
-std::string softwareStudent::getDegreeProgram() const {
-	return("Software");
+template <typename degreeType>
+degreeType softwareStudent<degreeType>::getDegreeProgram() const {
+	return(degree);
 }

@@ -1,17 +1,18 @@
 #include "pch.h"
 #include "networkStudent.h"
 
-
-networkStudent::networkStudent() : student()
+template <typename degreeType>
+networkStudent<degreeType>::networkStudent() : student()
 {
 	setDegree(degree);
 }
 
-
-networkStudent::~networkStudent()
+template <typename degreeType>
+networkStudent<degreeType>::~networkStudent()
 {
 }
 
-std::string networkStudent::getDegreeProgram() const {
-	return("Network");
+template <typename degreeType>
+degreeType networkStudent<degreeType>::getDegreeProgram() const {
+	return(degree);
 }

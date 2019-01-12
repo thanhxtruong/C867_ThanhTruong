@@ -3,18 +3,20 @@
 #include <string>
 using std::string;
 
-
-securityStudent::securityStudent() : student()
+template <typename degreeType>
+securityStudent<degreeType>::securityStudent() : student()
 {
 	setDegree(degree);
 }
 
-securityStudent::~securityStudent()
+template <typename degreeType>
+securityStudent<degreeType>::~securityStudent()
 {
 }
 
-std::string securityStudent::getDegreeProgram() const {
-	return("Security");
+template <typename degreeType>
+degreeType securityStudent<degreeType>::getDegreeProgram() const {
+	return(degree);
 }
 
 
